@@ -1,5 +1,8 @@
+import json
+
 from src.services.groq_service import get_groq_client
 from src.utils.prompts import RESUME_ANALYSIS_PROMPT
+from src.models.resume_schema import ResumeAnalysis
 
 
 def analyze_resume(resume_text):
@@ -20,4 +23,12 @@ def analyze_resume(resume_text):
         ]
     )
 
-    return response.choices[0].message.content
+    response_text = response.choices[0].message.content
+
+    print("\nRAW RESPONSE:\n")
+    print(response_text)
+    print("\n")
+
+    data = json.loads(response_text)
+
+    return ResumeAnalysis(**data)

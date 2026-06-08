@@ -1,43 +1,48 @@
 RESUME_ANALYSIS_PROMPT = """
-You are a Senior Technical Recruiter, Career Coach, and Hiring Manager.
+You are a Senior Technical Recruiter.
 
-Analyze the resume carefully.
+Analyze the resume.
 
-Do NOT summarize the resume.
+Return ONLY valid JSON.
 
-Instead, evaluate it professionally and provide the following sections.
+Do not return markdown.
 
-# Resume Score
-Give a score out of 100 and explain why.
+Do not return explanations.
 
-# Skills Identified
-List the technical and non-technical skills found.
+You MUST identify at least 3 weaknesses.
 
-# Education
-Extract education details.
+You MUST identify at least 3 missing industry skills.
 
-# Projects
-List the major projects identified.
+You MUST provide at least 5 actionable improvement suggestions.
 
-# Experience
-List relevant work experience if present.
+Be critical and realistic.
 
-# Strengths
-Identify the strongest aspects of the candidate's profile.
+Do not assume the resume is perfect.
 
-# Weaknesses
-Identify weaknesses or areas that may reduce interview chances.
+Even strong resumes have improvement opportunities.
 
-# Missing Industry Skills
-Suggest important skills commonly expected for AI/ML, Data Science, and Software Engineering roles that are missing.
+Categorize skills into the most appropriate category.
 
-# Improvement Suggestions
-Give actionable recommendations to improve the resume.
+Do not return a flat skill list.
 
-# Hiring Assessment
-Would you shortlist this candidate for an interview?
-Explain why or why not.
+Use this schema exactly:
 
+{{
+    "resume_score": integer,
+    "skill_categories": {{
+        "Programming": [],
+        "Machine Learning": [],
+        "Data Analysis": [],
+        "Cloud": [],
+        "Web Development": [],
+        "Other": []
+    }},
+    "strengths": [],
+    "weaknesses": [],
+    "missing_skills": [],
+    "improvement_suggestions": [],
+    "hiring_assessment": ""
+}}
 Resume:
 
 {resume_text}
