@@ -3,23 +3,13 @@ import streamlit as st
 from src.services.resume_service import process_resume
 from src.services.resume_analyzer import analyze_resume
 
-
-st.set_page_config(
-    page_title="Resume Analyzer",
-    page_icon="📄",
-    layout="wide"
-)
+st.set_page_config(page_title="Resume Analyzer", page_icon="📄", layout="wide")
 
 st.title("📄 Resume Analyzer & Interview Preparation Assistant")
 
-st.write(
-    "Upload your resume and receive AI-powered analysis."
-)
+st.write("Upload your resume and receive AI-powered analysis.")
 
-uploaded_file = st.file_uploader(
-    "Upload Resume (PDF)",
-    type=["pdf"]
-)
+uploaded_file = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
 
 if uploaded_file is not None:
 
@@ -28,30 +18,19 @@ if uploaded_file is not None:
     st.success("Resume uploaded successfully!")
 
     with st.expander("View Extracted Resume Text"):
-        st.text_area(
-            "Resume Content",
-            result["resume_text"],
-            height=300
-        )
+        st.text_area("Resume Content", result["resume_text"], height=300)
 
     if st.button("Analyze Resume"):
 
         with st.spinner("Analyzing Resume..."):
 
-            analysis = analyze_resume(
-                result["resume_text"]
-            )
+            analysis = analyze_resume(result["resume_text"])
 
         st.success("Analysis Complete")
 
-        st.metric(
-            "Resume Score",
-            f"{analysis.resume_score}/100"
-        )
+        st.metric("Resume Score", f"{analysis.resume_score}/100")
 
-        st.progress(
-            analysis.resume_score / 100
-        )
+        st.progress(analysis.resume_score / 100)
         col1, col2 = st.columns(2)
 
         with col1:
@@ -88,11 +67,6 @@ if uploaded_file is not None:
 
             if skills:
 
-                st.markdown(f"### {category}")
+                st.markdown(f"**{category} ({len(skills)})**")
 
-                cols = st.columns(3)
-
-                for index, skill in enumerate(skills):
-                    cols[index % 3].success(skill)
-
-        
+                st.caption(" • ".join(skills))
