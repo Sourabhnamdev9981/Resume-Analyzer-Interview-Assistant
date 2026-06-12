@@ -47,3 +47,31 @@ Resume:
 
 {resume_text}
 """
+INTERVIEW_QUESTIONS_PROMPT = """
+You are a Senior Technical Interviewer.
+
+Generate interview questions based on the candidate's resume.
+
+Return ONLY valid JSON.
+
+Schema:
+
+{{
+    "hr_questions": [],
+    "technical_questions": [],
+    "resume_based_questions": []
+}}
+
+Rules:
+
+- Generate 5 HR questions.
+- Generate 10 technical questions.
+- Generate 10 resume-based questions.
+- Questions must be personalized.
+- Use projects, skills, and technologies from the resume.
+- Do not generate generic questions unless necessary.
+
+Resume:
+
+{resume_text}
+"""
