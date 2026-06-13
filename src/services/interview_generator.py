@@ -25,10 +25,33 @@ def generate_interview_questions(resume_text):
 
     json_text = response_text[start:end]
 
+    print("\nJSON TEXT:\n")
+    print(json_text)
+    print("\n")
+
     data = json.loads(json_text)
 
+    print("\nPARSED DATA:\n")
+    print(data)
+    print("\n")
+
+    hr_questions = [
+        item.get("question", str(item)) if isinstance(item, dict) else str(item)
+        for item in data["hr_questions"]
+    ]
+
+    technical_questions = [
+        item.get("question", str(item)) if isinstance(item, dict) else str(item)
+        for item in data["technical_questions"]
+    ]
+
+    resume_based_questions = [
+        item.get("question", str(item)) if isinstance(item, dict) else str(item)
+        for item in data["resume_based_questions"]
+    ]
+
     return InterviewQuestions(
-        hr_questions=data["hr_questions"],
-        technical_questions=data["technical_questions"],
-        resume_based_questions=data["resume_based_questions"],
+        hr_questions=hr_questions,
+        technical_questions=technical_questions,
+        resume_based_questions=resume_based_questions,
     )

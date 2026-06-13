@@ -2,6 +2,7 @@ import streamlit as st
 
 from src.services.resume_service import process_resume
 from src.services.resume_analyzer import analyze_resume
+from src.services.interview_generator import generate_interview_questions
 
 st.set_page_config(page_title="Resume Analyzer", page_icon="📄", layout="wide")
 
@@ -24,13 +25,21 @@ if uploaded_file is not None:
 
         with st.spinner("Analyzing Resume..."):
 
-            analysis = analyze_resume(result["resume_text"])
+            st.session_state.analysis = analyze_resume(result["resume_text"])
+
+            if "interview_questions" in st.session_state:
+                del st.session_state["interview_questions"]
+
+    if "analysis" in st.session_state:
+
+        analysis = st.session_state.analysis
 
         st.success("Analysis Complete")
 
         st.metric("Resume Score", f"{analysis.resume_score}/100")
 
         st.progress(analysis.resume_score / 100)
+
         col1, col2 = st.columns(2)
 
         with col1:
@@ -70,3 +79,38 @@ if uploaded_file is not None:
                 st.markdown(f"**{category} ({len(skills)})**")
 
                 st.caption(" • ".join(skills))
+
+        st.divider()
+
+        st.subheader("🎤 Interview Preparation")
+
+        if st.button("Generate Interview Questions", key="interview_questions_btn"):
+
+            with st.spinner("Generating Interview Questions..."):
+
+                st.session_state.interview_questions = generate_interview_questions(
+                    result["resume_text"]
+                )
+
+        if "interview_questions" in st.session_state:
+
+            questions = st.session_state.interview_questions
+
+            tab1, tab2, tab3 = st.tabs(
+                ["HR Questions", "Technical Questions", "Resume-Based Questions"]
+            )
+
+            with tab1:
+
+                for i, question in enumerate(questions.hr_questions, start=1):
+                    st.write(f"{i}. {question}")
+
+            with tab2:
+
+                for i, question in enumerate(questions.technical_questions, start=1):
+                    st.write(f"{i}. {question}")
+
+            with tab3:
+
+                for i, question in enumerate(questions.resume_based_questions, start=1):
+                    st.write(f"{i}. {question}")
