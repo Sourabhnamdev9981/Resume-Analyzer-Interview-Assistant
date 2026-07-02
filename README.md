@@ -62,7 +62,7 @@ An AI-powered Resume Analyzer and Interview Preparation Assistant built using **
 
 ### AI Model
 
-* Google Gemini API
+* Meta Llama
 
 ### PDF Processing
 
