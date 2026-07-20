@@ -1,168 +1,254 @@
-# Resume Analyzer & Interview Preparation Assistant
+# 🤖 AI Resume Analyzer & Interview Preparation Assistant
 
-An AI-powered Resume Analyzer and Interview Preparation Assistant built using **Python, Streamlit, and Google's Gemini API**. The application analyzes resumes, identifies strengths and weaknesses, provides improvement suggestions, performs skill-gap analysis, predicts ATS compatibility, and generates personalized interview questions.
+<p align="center">
 
----
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red?style=for-the-badge&logo=streamlit)
+![Groq](https://img.shields.io/badge/Groq-LLM-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## Features
-
-### Resume Analysis
-
-* Upload PDF resumes
-* Extract and process resume content
-* Analyze:
-
-  * Skills
-  * Projects
-  * Education
-  * Experience
-  * Strengths
-  * Weaknesses
-
-### Resume Scoring
-
-* Overall resume score
-* Section-wise evaluation
-* Improvement recommendations
-
-### Skill Gap Analysis
-
-* Identify missing skills
-* Recommend learning paths
-* Compare current profile against target roles
-
-### Interview Preparation
-
-* Personalized HR questions
-* Personalized Technical questions
-* Resume-based interview questions
-
-### ATS Analysis
-
-* ATS compatibility score
-* Keyword analysis
-* Missing keyword suggestions
-
-### Report Generation
-
-* Comprehensive analysis report
-* Downloadable PDF report
+</p>
 
 ---
 
-## Tech Stack
+## 📌 Overview
+
+AI Resume Analyzer & Interview Preparation Assistant is an intelligent web application that analyzes resumes using Large Language Models (LLMs) and provides detailed, actionable feedback to help job seekers improve their resumes and prepare for interviews.
+
+The application extracts text from PDF resumes, evaluates resume quality, identifies strengths and weaknesses, categorizes technical skills, calculates a resume score, and generates personalized interview questions based on the uploaded resume.
+
+---
+
+## 🚀 Live Demo
+
+🔗 **Application:** https://resume-analyzer-interview-assistant.streamlit.app/
+
+---
+
+# ✨ Features
+
+✅ Upload PDF Resume
+
+✅ AI-powered Resume Analysis
+
+✅ Resume Score (0–100)
+
+✅ Technical Skill Categorization
+
+✅ Strength Analysis
+
+✅ Weakness Detection
+
+✅ Missing Skill Identification
+
+✅ Resume Improvement Suggestions
+
+✅ Hiring Assessment
+
+✅ AI Interview Question Generator
+
+- HR Questions
+- Technical Questions
+- Resume-Based Questions
+
+---
+
+# 📸 Screenshots
+
+## Home
+
+> Add Screenshot Here
+
+```
+images/home.png
+```
+
+---
+
+## Resume Analysis
+
+> Add Screenshot Here
+
+```
+images/analysis.png
+```
+
+---
+
+## Interview Questions
+
+> Add Screenshot Here
+
+```
+images/interview.png
+```
+
+---
+
+## Dashboard
+
+> Add Screenshot Here
+
+```
+images/dashboard.png
+```
+
+---
+
+# 🛠 Tech Stack
 
 ### Frontend
 
-* Streamlit
+- Streamlit
 
 ### Backend
 
-* Python
+- Python
 
 ### AI Model
 
-* Meta Llama
+- Groq API
+- Llama 3.1 8B Instant
 
-### PDF Processing
+### Libraries
 
-* PyMuPDF
-
-### Data Validation
-
-* Pydantic
-
-### Report Generation
-
-* ReportLab
+- PyMuPDF
+- Pydantic
+- ReportLab
+- Pandas
+- Python Dotenv
 
 ---
 
-## Project Architecture
+# ⚙️ Project Architecture
 
-Resume Upload
-↓
-PDF Text Extraction
-↓
-Resume Parsing
-↓
-Gemini Analysis Engine
-├── Resume Analysis
-├── Resume Scoring
-├── Skill Gap Analysis
-├── ATS Analysis
-└── Interview Question Generation
-↓
-PDF Report Generator
-↓
-Downloadable Report
+```
+User
+      │
+      ▼
+Upload Resume (PDF)
+      │
+      ▼
+Resume Extraction (PyMuPDF)
+      │
+      ▼
+Resume Analyzer
+      │
+      ▼
+Groq LLM
+      │
+      ▼
+Resume Analysis
+      │
+      ├────────► Resume Score
+      ├────────► Skill Categories
+      ├────────► Strengths
+      ├────────► Weaknesses
+      ├────────► Missing Skills
+      ├────────► Suggestions
+      └────────► Hiring Assessment
+                    │
+                    ▼
+Interview Question Generator
+                    │
+                    ▼
+HR Questions
+Technical Questions
+Resume-Based Questions
+```
 
 ---
 
-## Folder Structure
+# 📂 Project Structure
 
-```text
-Resume-Analyzer-AI/
+```
+Resume-Analyzer-Interview-Assistant/
+
 │
+
 ├── app.py
+
 ├── requirements.txt
+
 ├── README.md
-├── .env
+
 ├── .gitignore
+
 │
-├── assets/
-├── data/
-│   └── reports/
-│
+
 ├── src/
-│   ├── config/
+
 │   ├── models/
+
+│   ├── prompts/
+
+│   ├── schemas/
+
 │   ├── services/
+
 │   └── utils/
+
 │
-├── tests/
-└── screenshots/
+
+└── tests/
+
 ```
 
-## Installation
+---
 
-### Clone Repository
+# 💻 Installation
+
+Clone the repository
 
 ```bash
-git clone https://github.com/your-username/resume-analyzer-interview-assistant.git
-
-cd resume-analyzer-interview-assistant
+git clone https://github.com/Sourabhnamdev9981/Resume-Analyzer-Interview-Assistant.git
 ```
 
-### Create Virtual Environment
+Go into the project
 
 ```bash
-python -m venv venv
+cd Resume-Analyzer-Interview-Assistant
 ```
 
-### Activate Virtual Environment
-
-Windows:
+Create a virtual environment
 
 ```bash
-venv\Scripts\activate
+python -m venv .venv
 ```
 
-### Install Dependencies
+Activate it
+
+Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+Linux / macOS
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Configure Environment Variables
+---
 
-Create a `.env` file:
+# 🔑 Environment Variables
 
-```env
-GEMINI_API_KEY=YOUR_API_KEY
+Create a `.env` file
+
+```
+GROQ_API_KEY=your_api_key
 ```
 
-### Run Application
+---
+
+# ▶️ Run Locally
 
 ```bash
 streamlit run app.py
@@ -170,36 +256,58 @@ streamlit run app.py
 
 ---
 
-## Future Enhancements
+# 🎯 Current Features
 
-* Job Description Matching
-* Resume Tailoring for Specific Roles
-* AI Career Roadmap Generation
-* Mock Interview Simulation
-* Voice-Based Interview Practice
-* Multi-Resume Comparison
-* Resume Version Tracking
-
----
-
-## Learning Outcomes
-
-* Generative AI Application Development
-* Prompt Engineering
-* Document Processing
-* Streamlit Application Development
-* Gemini API Integration
-* Software Architecture Design
-* ATS Optimization Techniques
-* Production-Level Python Development
+| Feature | Status |
+|----------|--------|
+| Resume Upload | ✅ |
+| Resume Parsing | ✅ |
+| Resume Analysis | ✅ |
+| Resume Score | ✅ |
+| Skill Categorization | ✅ |
+| Strength Detection | ✅ |
+| Weakness Detection | ✅ |
+| Missing Skills | ✅ |
+| Hiring Assessment | ✅ |
+| Interview Question Generation | ✅ |
 
 ---
 
-## Resume Description
+# 🔮 Future Improvements
 
-**Resume Analyzer & Interview Preparation Assistant | Python, Streamlit, Gemini API**
+- ATS Resume Matching
+- Job Description Comparison
+- Resume PDF Report
+- Multi-language Resume Support
+- Resume Keyword Optimization
+- Cover Letter Generator
+- AI Career Suggestions
+- Resume Version Comparison
 
-* Developed an AI-powered resume analysis platform using Gemini API to evaluate skills, projects, education, and experience.
-* Implemented resume scoring, ATS analysis, skill-gap detection, and personalized interview question generation.
-* Built a modular, deployment-ready Streamlit application with PDF report generation capabilities.
-* Applied Generative AI, prompt engineering, and document processing techniques to deliver career-readiness insights.
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+Feel free to fork this repository, create a feature branch, and submit a pull request.
+
+---
+
+# 👨‍💻 Author
+
+### Sourabh Namdev
+
+Artificial Intelligence & Machine Learning Undergraduate
+
+🔗 GitHub
+
+https://github.com/Sourabhnamdev9981
+
+🔗 LinkedIn
+
+https://www.linkedin.com/in/sourabh-namdev-990515279
+
+---
+
+## ⭐ If you like this project, don't forget to star the repository!
