@@ -60,7 +60,7 @@ The application extracts text from PDF resumes, evaluates resume quality, identi
 > Add Screenshot Here
 
 ```
-images/home.png
+screenshots/Home.png
 ```
 
 ---
@@ -70,7 +70,7 @@ images/home.png
 > Add Screenshot Here
 
 ```
-images/analysis.png
+screenshots/analysis.png
 ```
 
 ---
@@ -80,7 +80,7 @@ images/analysis.png
 > Add Screenshot Here
 
 ```
-images/interview.png
+screenshots/interview.png
 ```
 
 ---
@@ -90,7 +90,7 @@ images/interview.png
 > Add Screenshot Here
 
 ```
-images/dashboard.png
+screenshots/upload.png
 ```
 
 ---
