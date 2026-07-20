@@ -53,47 +53,21 @@ The application extracts text from PDF resumes, evaluates resume quality, identi
 
 ---
 
-# 📸 Screenshots
-
 ## Home
 
-> Add Screenshot Here
-
-```
-screenshots/Home.png
-```
-
----
+![Home](screenshots/home.png)
 
 ## Resume Analysis
 
-> Add Screenshot Here
-
-```
-screenshots/analysis.png
-```
-
----
+![Resume Analysis](screenshots/analysis.png)
 
 ## Interview Questions
 
-> Add Screenshot Here
-
-```
-screenshots/interview.png
-```
-
----
+![Interview Questions](screenshots/interview.png)
 
 ## Dashboard
 
-> Add Screenshot Here
-
-```
-screenshots/upload.png
-```
-
----
+![Dashboard](screenshots/upload.png)
 
 # 🛠 Tech Stack
 
