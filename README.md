@@ -55,7 +55,7 @@ The application extracts text from PDF resumes, evaluates resume quality, identi
 
 ## Home
 
-![Home](screenshots/home.png)
+![Home](screenshots/Home.png)
 
 ## Resume Analysis
 
