@@ -52,6 +52,7 @@ The application extracts text from PDF resumes, evaluates resume quality, identi
 - Resume-Based Questions
 
 ---
+# 📸 Screenshots
 
 ## Home
 
