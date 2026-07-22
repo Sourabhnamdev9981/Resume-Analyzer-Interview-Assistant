@@ -4,9 +4,9 @@ from src.services.resume_service import process_resume
 from src.services.resume_analyzer import analyze_resume
 from src.services.interview_generator import generate_interview_questions
 
-st.set_page_config(page_title="Resume Analyzer", page_icon="📄", layout="wide")
+st.set_page_config(page_title="Resume Analyzer", layout="wide")
 
-st.title("📄 Resume Analyzer & Interview Preparation Assistant")
+st.title("Resume Analyzer & Interview Preparation Assistant")
 
 st.write("Upload your resume and receive AI-powered analysis.")
 
@@ -44,33 +44,33 @@ if uploaded_file is not None:
 
         with col1:
 
-            st.subheader("💪 Strengths")
+            st.subheader("Strengths")
 
             for strength in analysis.strengths:
                 st.write(f"• {strength}")
 
         with col2:
 
-            st.subheader("⚠️ Weaknesses")
+            st.subheader("Weaknesses")
 
             for weakness in analysis.weaknesses:
                 st.write(f"• {weakness}")
 
-        st.subheader("🛠 Missing Skills")
+        st.subheader("Missing Skills")
 
         for skill in analysis.missing_skills:
             st.write(f"• {skill}")
 
-        st.subheader("📈 Improvement Suggestions")
+        st.subheader("Improvement Suggestions")
 
         for suggestion in analysis.improvement_suggestions:
             st.write(f"• {suggestion}")
 
-        st.subheader("🎯 Hiring Assessment")
+        st.subheader("Hiring Assessment")
 
         st.info(analysis.hiring_assessment)
 
-        st.subheader("🧠 Skill Categories")
+        st.subheader("Skill Categories")
 
         for category, skills in analysis.skill_categories.items():
 
@@ -82,7 +82,7 @@ if uploaded_file is not None:
 
         st.divider()
 
-        st.subheader("🎤 Interview Preparation")
+        st.subheader("Interview Preparation")
 
         if st.button("Generate Interview Questions", key="interview_questions_btn"):
 

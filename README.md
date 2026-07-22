@@ -1,4 +1,4 @@
-# 🤖 AI Resume Analyzer & Interview Preparation Assistant
+# AI Resume Analyzer & Interview Preparation Assistant
 
 <p align="center">
 
@@ -11,7 +11,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 AI Resume Analyzer & Interview Preparation Assistant is an intelligent web application that analyzes resumes using Large Language Models (LLMs) and provides detailed, actionable feedback to help job seekers improve their resumes and prepare for interviews.
 
@@ -19,40 +19,40 @@ The application extracts text from PDF resumes, evaluates resume quality, identi
 
 ---
 
-## 🚀 Live Demo
+##  Live Demo
 
 🔗 **Application:** https://resume-analyzer-interview-assistant.streamlit.app/
 
 ---
 
-# ✨ Features
+#  Features
 
-✅ Upload PDF Resume
+ Upload PDF Resume
 
-✅ AI-powered Resume Analysis
+ AI-powered Resume Analysis
 
-✅ Resume Score (0–100)
+ Resume Score (0–100)
 
-✅ Technical Skill Categorization
+ Technical Skill Categorization
 
-✅ Strength Analysis
+ Strength Analysis
 
-✅ Weakness Detection
+ Weakness Detection
 
-✅ Missing Skill Identification
+ Missing Skill Identification
 
-✅ Resume Improvement Suggestions
+ Resume Improvement Suggestions
 
-✅ Hiring Assessment
+ Hiring Assessment
 
-✅ AI Interview Question Generator
+ AI Interview Question Generator
 
 - HR Questions
 - Technical Questions
 - Resume-Based Questions
 
 ---
-# 📸 Screenshots
+#  Screenshots
 
 ## Home
 
@@ -95,7 +95,7 @@ The application extracts text from PDF resumes, evaluates resume quality, identi
 
 ---
 
-# ⚙️ Project Architecture
+#  Project Architecture
 
 ```
 User
@@ -134,7 +134,7 @@ Resume-Based Questions
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```
 Resume-Analyzer-Interview-Assistant/
@@ -171,7 +171,7 @@ Resume-Analyzer-Interview-Assistant/
 
 ---
 
-# 💻 Installation
+#  Installation
 
 Clone the repository
 
@@ -213,7 +213,7 @@ pip install -r requirements.txt
 
 ---
 
-# 🔑 Environment Variables
+#  Environment Variables
 
 Create a `.env` file
 
@@ -223,7 +223,7 @@ GROQ_API_KEY=your_api_key
 
 ---
 
-# ▶️ Run Locally
+# Run Locally
 
 ```bash
 streamlit run app.py
@@ -231,24 +231,7 @@ streamlit run app.py
 
 ---
 
-# 🎯 Current Features
-
-| Feature | Status |
-|----------|--------|
-| Resume Upload | ✅ |
-| Resume Parsing | ✅ |
-| Resume Analysis | ✅ |
-| Resume Score | ✅ |
-| Skill Categorization | ✅ |
-| Strength Detection | ✅ |
-| Weakness Detection | ✅ |
-| Missing Skills | ✅ |
-| Hiring Assessment | ✅ |
-| Interview Question Generation | ✅ |
-
----
-
-# 🔮 Future Improvements
+#  Future Improvements
 
 - ATS Resume Matching
 - Job Description Comparison
@@ -261,7 +244,7 @@ streamlit run app.py
 
 ---
 
-# 🤝 Contributing
+#  Contributing
 
 Contributions are welcome!
 
@@ -269,7 +252,7 @@ Feel free to fork this repository, create a feature branch, and submit a pull re
 
 ---
 
-# 👨‍💻 Author
+#  Author
 
 ### Sourabh Namdev
 
@@ -285,4 +268,4 @@ https://www.linkedin.com/in/sourabh-namdev-990515279
 
 ---
 
-## ⭐ If you like this project, don't forget to star the repository!
+## If you like this project, don't forget to star the repository!
